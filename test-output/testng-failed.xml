@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="instances">
+  <listeners>
+    <listener class-name="com.auto.utils.ListnerReport"/>
+  </listeners>
+  <test name="Test">
+    <classes>
+      <class name="com.auto.testcases.SignInTest"/>
+    </classes>
+  </test> <!-- Test -->
+  <test name="Test(failed)" parallel="instances">
+    <classes>
+      <class name="com.auto.testcases.SignInTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="signIn" invocation-numbers="1"/>
+          <include name="cleanUp"/>
+        </methods>
+      </class> <!-- com.auto.testcases.SignInTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
