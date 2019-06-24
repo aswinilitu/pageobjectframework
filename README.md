@@ -1,2 +1,0 @@
-# pageobjectframework
-selenium POM framework
